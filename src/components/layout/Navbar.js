@@ -9,11 +9,14 @@ export default function Navbar() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setSearchResult(searchTerm);
+    setSearchTerm("");
   };
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
+
+  const removeSearchString = 12;
 
   return (
     <div className="navbar">
@@ -31,9 +34,14 @@ export default function Navbar() {
         </li>
         <li className="search-container">
           {searchResult === null || searchResult !== searchTerm ? null : (
-            <Redirect to={"/search/" + searchTerm} />
+            <Redirect to={{
+              pathname: `/search/${searchTerm}`,
+              state: {
+                removeSearchString: removeSearchString
+              }
+            }}/>
           )}
-          <form onSubmit={handleSubmit}>
+          <form>
             <input
               id = "searchForm"
               type="text"
@@ -42,7 +50,7 @@ export default function Navbar() {
               onChange={handleChange}
               minLength="3"
             />
-            <button type="submit" disabled={searchTerm === ""} className="fa fa-search">
+            <button type="submit" onSubmit={handleSubmit} disabled={searchTerm === ""} className="fa fa-search">
               Search
             </button>
           </form>
