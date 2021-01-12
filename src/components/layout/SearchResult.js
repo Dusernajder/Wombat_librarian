@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import BookCard from "../BookCard";
 import wombutt from "../../images/wombutt.jpg";
@@ -29,14 +29,9 @@ export default function SearchResult(props) {
   useEffect(() => {
     fetchBooks();
   }, [searchTerm]);
-
-  // let searchInput = document.getElementById('searchForm');
-  // searchInput.value = "";
-
-  let removeSearch = useLocation();
   
   return (
-    <div onLoad={removeSearch.state.removeSearchString}>
+    <div>
       {isLoading ? (
         <div className="wombat">
           <h4>Loading...</h4>

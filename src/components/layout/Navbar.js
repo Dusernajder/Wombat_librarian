@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Redirect, Link } from "react-router-dom";
 import "../../style/Navbar.css";
+import SearchResult from "./SearchResult";
 
 export default function Navbar() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState(null);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     setSearchResult(searchTerm);
     setSearchTerm("");
   };
@@ -15,8 +16,6 @@ export default function Navbar() {
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
-
-  const removeSearchString = 12;
 
   return (
     <div className="navbar">
@@ -33,15 +32,12 @@ export default function Navbar() {
           </li>
         </li>
         <li className="search-container">
-          {searchResult === null || searchResult !== searchTerm ? null : (
+          {searchResult === null ? null : (
             <Redirect to={{
-              pathname: `/search/${searchTerm}`,
-              state: {
-                removeSearchString: removeSearchString
-              }
+              pathname: `/search/${searchResult}`
             }}/>
           )}
-          <form>
+          <form onSubmit={handleSubmit}>
             <input
               id = "searchForm"
               type="text"
@@ -50,7 +46,7 @@ export default function Navbar() {
               onChange={handleChange}
               minLength="3"
             />
-            <button type="submit" onSubmit={handleSubmit} disabled={searchTerm === ""} className="fa fa-search">
+            <button type="submit" value="Submit" disabled={searchTerm === ""} className="fa fa-search">
               Search
             </button>
           </form>
