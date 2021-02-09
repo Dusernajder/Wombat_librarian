@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+﻿# The Wombat Librarian
+ 
+This is the frontend (built with React) part of our web-application made for book lovers, where people can browse books, keep track of what books they have and what books they want to read. The aim of the site to create a community where the users can trade, rate, and discuss books.
+To give you an idea, the aim is to make it similar to https://www.goodreads.com/, or the hungarian moly.hu (https://hu.wikipedia.org/wiki/Moly.hu)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Backend repository can be found here: https://github.com/Dusernajder/WombatLibrarianApi
 
-## Available Scripts
+## Project Status
 
-In the project directory, you can run:
+This project is currently in development. The user can add books to his/her bookshelf and wishlist, which is stored on the server side in a database with the help of Entity Framework. The current sprint's scope is to implement registration/login on the website, trach individual bookshelves and wishlists per user.
 
+Further tasks for subsequent sprints: develop the community side of the webpage, make following people possible, add rating and comment section to book, create a forum as part of the web application.
+
+## Project Screenshots
+
+Front page:
+![Welcome page](https://i.ibb.co/2czn1dC/wombat-Librarian01.png)
+
+Results of a search for "Asimov":
+
+![Search results](https://i.ibb.co/XJDFRtL/wombat-Librarian02.png)
+
+Details of a selected book:
+
+![Book details](https://i.ibb.co/dD2vFRn/wombat03.png)
+
+The current state of our bookshelf (after adding some books to it):
+
+![Bookshelf content with books](https://i.ibb.co/mtdmDnx/wombat04.png)
+
+How our wishlist looks without adding any books to it:
+
+![Wishlist content without books](https://i.ibb.co/vVLL3ZY/wombat05.png)
+
+## Installation and Setup Instructions
+
+1. Clone this repository. You will need node and npm installed globally on your machine in order to run the frontend.
+   You also have to clone the backend repository and follow the instruction in the readme file you can find there.
+   Backend repository can be found here: https://github.com/Dusernajder/WombatLibrarianApi
+   We recommend setting up the backend first, and coming back for the frontend part after that, but it works flawlessly both ways.
+2. Open the frontend repository in your favorite IDE or editor, or just open the project folder in a command line tool.
+3. Install package dependencies with this cli command:
+### `npm install`
+4. After the dependencies are installed, hit
 ### `npm start`
+to access the frontend.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+6. If you for some reason don't have the backend on your local, you will have a pretty but not very usable page. So don't forget to go to the backend repository and follow the instructions in the readme!
 
 The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You might also see lint errors in the console; our team is currently working hard to delete all traces of such annoying, but otherwise harmless errors.

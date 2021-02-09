@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/wombatLogo.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -24,7 +24,52 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>The Wombat Librarian</title>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+
+      // Wombat picture fades in
+      $(function(){
+          $(".wombat-logo")
+              .hide()
+              .css('opacity', 0)
+              .slideDown('slow')
+              .animate(
+                  { opacity: 1 },
+                  { queue: false, duration: 'slow' }
+              );
+      });
+
+      // Intro on homepage fades in
+      $(function(){
+          $(".introduction")
+              .hide()
+              .css('opacity', 0)
+              .slideDown('slow')
+              .animate(
+                  { opacity: 1 },
+                  { queue: false, duration: 'slow' }
+              );
+      });
+
+      // Search results appear when search button is clicked
+      $(document).on("click", ".fa-search", function () {
+            $(".card-container")
+              .hide()
+              .css('opacity', 0)
+              .slideDown(1000)
+              .animate(
+                  { opacity: 1 },
+                  { queue: false, duration: 'slow' }
+              );
+        });
+
+    </script>
+    <!-- End of JQuery -->
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
